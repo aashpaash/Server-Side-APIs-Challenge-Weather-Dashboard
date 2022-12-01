@@ -1,10 +1,18 @@
 let weather = {
     "apiKey": "4fb00fc4e626764db50e2ea3b5fe5a50",
-    fetchWeather: function () {
+    fetchWeather: function (city) {
         fetch(
-          href= "https://api.openweathermap.org/data/2.5/weather?lat=45.516020&lon=-122.681430&appid=4fb00fc4e626764db50e2ea3b5fe5a50", 
+          href= "https://api.openweathermap.org/data/2.5/weather?q=" 
+          + city
+          "&units=metrics&lat=&lon=&appid=" +
+          this.apiKey, 
         ) 
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                alert("Weather Not Found. Try again");
+            }
+            return response.json();
+        })
         .then((data) => this.displayWeather(data)); 
     },
     displayWeather: function(data) {
@@ -18,5 +26,22 @@ let weather = {
         document.querySelector(".temp").innerText = temp + "°F";
         document.querySelector(".humidity").innerText = "Humidity" + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed" + speed + " mph";
-    }
+        document.body.style.backgroundImage = "url("
+    },
+    search: function () {
+        this.fetchWeather(document.querySelector(".search-bar").Value);
+    },
 };
+
+document.querySelector(".search-bar").addEventListener("click", function () {
+    weather.search();
+});
+
+document
+   .querySelector(".search-bar")
+   .addEventListener("keyup", function (event) {
+       if (event.key === "Enter") {
+           weather.search();
+       }
+    });
+    

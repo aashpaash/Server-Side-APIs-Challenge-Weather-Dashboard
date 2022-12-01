@@ -1,10 +1,15 @@
+
+
+
+
+//Fetch Weather
 let weather = {
     "apiKey": "4fb00fc4e626764db50e2ea3b5fe5a50",
     fetchWeather: function (city) {
         fetch(
           href= "https://api.openweathermap.org/data/2.5/weather?q=" 
           + city
-          "&units=metrics&lat=&lon=&appid=" +
+          "&units=metrics&appid=" +
           this.apiKey, 
         ) 
         .then(response => {
@@ -42,6 +47,8 @@ document
    .addEventListener("keyup", function (event) {
        if (event.key === "Enter") {
            weather.search();
-       }
-    });
-    
+    }
+});
+
+//Store Data
+

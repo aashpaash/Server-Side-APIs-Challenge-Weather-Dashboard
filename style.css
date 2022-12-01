@@ -24,6 +24,12 @@ body {
     margin: 10px;
 }
 
+#card-weather {
+    display: flex;
+    justify-content: center/space-between;
+    flex-direction: column;
+}
+
 /*Search Bar*/
 .search {
     display: flex;
@@ -89,16 +95,18 @@ header {
     text-align: center;
 }
 
+/*Cities*/
 .city {
-    font-size: 3.5rem;
+    font-size: 30px;
     color: var(--text-color);
     margin-bottom: 0.5rem;
     text-align: center; 
     font-family: Arial, Helvetica, sans-serif
 }
 
+
 h1 {
-    font-size: 2rem;
+    font-size: 20px;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     color: var(--text-color);
@@ -107,11 +115,10 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-family: 'Calibri', sans-serif;
     
 }
-
 
 
 /*Navation Bar*/

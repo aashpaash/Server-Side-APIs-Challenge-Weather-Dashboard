@@ -1,34 +1,35 @@
+
+// Get API data from Open Weather Map
 var API_Key = "4fb00fc4e626764db50e2ea3b5fe5a50";
 var Url = "https://api.openweathermap.org/data/2.5/forecast";
 var city = "Paris, France"
 
-// Fetch weather icons from open weather map
+// Weather icons from open weather map
 var iconWeather = 'https://openweathermap.org/img/w/${weather.weather[0].icon}.png';
+
+// Weather data Document Object Model - DOM
+var button = document.querySelector('.search-bar')
+var weather = document.querySelector('.weather')
+
+
+document.querySelector(".search-bar").addEventListener("click", function () {
+    weather.search();
+});
+
+
 
 // Fetch weather description
 
+button.addEventListener('click', function(){
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=4fb00fc4e626764db50e2ea3b5fe5a50')
+    .then(response => response.json())
+    .then(data => console.log(data))
 
-//Fetch Weather
-// var weather = {
-    url:"https://api.openweathermap.org/data/2.5/forecast",
-    displayWeather: {
-        q:city,
-            appid: apiKey,
-            units: "metric"
-            
-    },
-    
-    .then(response => {
-            if (!response.ok) {
-                alert("Weather Not Found. Try again");
-            }
-            return response.json();
-//        }}
-//        .then(response => {
-//            ((data) => response.displayWeather)
-//        }), 
-//        data = response.json()
-//    };
+.catch(err => alert("Weather Not Found. Please Search Again."))
+})
+
+// 
+
 let apiUrl = '${Url}?q${city}&appid=${API_KEY}&units=metric';
 
 axios.get(apiUrl)
@@ -55,17 +56,6 @@ axios.get(apiUrl)
     };
 ;
 
-document.querySelector(".search-bar").addEventListener("click", function () {
-    weather.search();
-});
-
-document
-   .querySelector(".search-bar")
-   .addEventListener("keyup", function (event) {
-       if (event.key === "Enter") {
-           weather.search();
-    }
-});
 
 //Store Data
 

@@ -1,10 +1,15 @@
-var apiKey = "API_KEY";
-"apiKey"= "4fb00fc4e626764db50e2ea3b5fe5a50",
-url = "https://api.openweathermap.org/data/2.5/forecast?q=?&&units=metricappid=4fb00fc4e626764db50e2ea3b5fe5a50"
-var city = "Paris, France";
+var API_Key = "4fb00fc4e626764db50e2ea3b5fe5a50";
+var Url = "https://api.openweathermap.org/data/2.5/forecast";
+var city = "Paris, France"
+
+// Fetch weather icons from open weather map
+var iconWeather = 'https://openweathermap.org/img/w/${weather.weather[0].icon}.png';
+
+// Fetch weather description
+
 
 //Fetch Weather
-var weather = {
+// var weather = {
     url:"https://api.openweathermap.org/data/2.5/forecast",
     displayWeather: {
         q:city,
@@ -18,12 +23,17 @@ var weather = {
                 alert("Weather Not Found. Try again");
             }
             return response.json();
-        }}
-        .then(response => {
-            ((data) => response.displayWeather)
-        }), 
-        data = response.json()
-    };
+//        }}
+//        .then(response => {
+//            ((data) => response.displayWeather)
+//        }), 
+//        data = response.json()
+//    };
+let apiUrl = '${Url}?q${city}&appid=${API_KEY}&units=metric';
+
+axios.get(apiUrl)
+    .then(response => {
+        )
 
     function displayWeather({
         temp: forecast,main,temp,

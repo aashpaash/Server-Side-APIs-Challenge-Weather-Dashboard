@@ -25,6 +25,9 @@
  WHEN I click on a city in the search history <br>
  THEN I am again presented with current and future conditions for that city <br>
  
+ # Screenshot
+ ![Screenhot](Server-Side-Screenshot.png)
+ 
  # Installation <br/>
  Deployment: https://aashpaash.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/
  Repo: https://github.com/aashpaash/Server-Side-APIs-Challenge-Weather-Dashboard
@@ -32,3 +35,8 @@
 ## Sources
 OpenWeather Map: https://api.openweathermap.org/ <br/>
 Class Lessons: 06-Server-Side-APIs
+
+![License Badge](https://img.shields.io/badge/ServerSideAPI-API-blue)<br/>
+![License Badge](https://img.shields.io/badge/API-API-blue)<br/>
+![License Badge](https://img.shields.io/badge/HTML-HTML-blue)<br/>
+![License Badge](https://img.shields.io/badge/CSS-CSS-blue)<br/>

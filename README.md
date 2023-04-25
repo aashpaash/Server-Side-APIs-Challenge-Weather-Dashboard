@@ -29,7 +29,7 @@
  ![Screenhot](Server-Side-Screenshot.png)
  
  # Installation <br/>
- Deployment: https://aashpaash.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/
+ Deployment: https://aashpaash.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/ <br/>
  Repo: https://github.com/aashpaash/Server-Side-APIs-Challenge-Weather-Dashboard
  
 ## Sources

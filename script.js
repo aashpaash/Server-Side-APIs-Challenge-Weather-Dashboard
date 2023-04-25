@@ -1,27 +1,30 @@
+//Variables
+// API data from Open Weather Map
+var APIKey = "4fb00fc4e626764db50e2ea3b5fe5a50";
+var queryURL = "https://api.openweathermap.org/data/2.5/forecast";
+var inputValue = input.value;
+var city;
 
-// Get API data from Open Weather Map
-var API_Key = "4fb00fc4e626764db50e2ea3b5fe5a50";
-var Url = "https://api.openweathermap.org/data/2.5/forecast";
-var city = "Paris, France"
 
-// Weather icons from open weather map
-var iconWeather = 'https://openweathermap.org/img/w/${weather.weather[0].icon}.png';
 
 // Weather data Document Object Model - DOM
 var button = document.querySelector('.search-bar')
 var weather = document.querySelector('.weather')
+var form = document.querySelector('.input.search-bar')
 
+// Fetch Weather from Requested City
+
+//fetch(queryURL)
 
 document.querySelector(".search-bar").addEventListener("click", function () {
     weather.search();
 });
 
 
+// Display Weather Results
 
-// Fetch weather description
-
-button.addEventListener('click', function(){
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=4fb00fc4e626764db50e2ea3b5fe5a50')
+form.addEventListener('click', function(){
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue+'&appid=4fb00fc4e626764db50e2ea3b5fe5a50')
     .then(response => response.json())
     .then(data => console.log(data))
 
@@ -30,11 +33,12 @@ button.addEventListener('click', function(){
 
 // 
 
-let apiUrl = '${Url}?q${city}&appid=${API_KEY}&units=metric';
+let apiURL = '${queryURL}?q${city}&appid=${APIKey}&units=metric';
 
-axios.get(apiUrl)
+axios.get(apiURL)
     .then(response => {
-        )
+
+    )
 
     function displayWeather({
         temp: forecast,main,temp,
@@ -56,6 +60,11 @@ axios.get(apiUrl)
     };
 ;
 
+// Weather icons from open weather map
+var iconWeather = 'https://openweathermap.org/img/w/${weather.weather[0].icon}.png';
 
-//Store Data
 
+//Store Data to Local Storage
+var searchHistory = JSON.parse(localStorage.setItem('search_history')) || [];
+if (searchHistory.indexof(inputValue) === -1)
+window.localStorage.setItem("searchHistory", JSON.stringify(searchHistory));

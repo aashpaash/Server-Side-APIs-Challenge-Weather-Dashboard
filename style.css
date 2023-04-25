@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
 }
-
+/*Background */
 body {
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@ body {
     font-family: sans-serif;
     font-size: 120%;
 }
-
+/*Home page search box*/
 .card   {
     background-color: #000000d0;
     color: white;
@@ -24,11 +24,11 @@ body {
     margin: 10px;
 }
 
-#card-weather {
+/*#card-weather {
     display: flex;
     justify-content: center/space-between;
     flex-direction: column;
-}
+}*/
 
 /*Search Bar*/
 .search {
@@ -36,7 +36,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+/*Search Bar Input Value*/
 input.search-bar {
     border: none;
     outline: none;
@@ -121,10 +121,10 @@ h2 {
 }
 
 
-/*Navation Bar*/
+/*Navation Bar
 .navigation-bar {
     background-color: rgb(247, 235, 221);
     padding: 10px 10px 10px 10px;
     text-align: center;
-}
+}*/
 

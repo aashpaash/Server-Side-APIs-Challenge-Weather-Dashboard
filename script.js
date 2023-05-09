@@ -22,6 +22,20 @@ document.querySelector(".search-bar").addEventListener("click", function () {
 
 
 // Display Weather Results
+function getWeather(inputValue) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${inputValue}&appid=4fb00fc4e626764db50e2ea3b5fe5a50`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => alert("Weather Not Found. Please Search Again."));
+  }
+  
+  document.querySelector(".search-bar").addEventListener("click", function () {
+    var inputValue = document.querySelector(".input").value;
+    getWeather(inputValue);
+  });
+  
 
 form.addEventListener('click', function(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+inputValue+'&appid=4fb00fc4e626764db50e2ea3b5fe5a50')
